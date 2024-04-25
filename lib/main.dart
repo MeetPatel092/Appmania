@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_salads/screens/bil.dart';
 import 'package:fresh_salads/screens/cartpage.dart';
 import 'package:fresh_salads/screens/detailpage.dart';
 import 'package:fresh_salads/screens/homepage.dart';
@@ -12,6 +13,7 @@ void main() {
         'Homepage': (context) => const Homepage(),
         'Detailpage': (context) => const Detailpage(),
         'Cartpage': (context) => const Cartpage(),
+        'bilpage': (context) => const PdfPage(),
       },
     ),
   );

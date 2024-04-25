@@ -322,32 +322,28 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               '\$ ${Product.Totalprice() * value.toDouble() + 5.00}',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,gi
+                                fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),
                             ),
                           ],
                         ),
-                        GestureDetector(
-                          onTap: () {
+                        ElevatedButton(
+                          onPressed: () {
                             setState(() {
-                              Navigator.of(context).popAndPushNamed('Homepage');
+                              Navigator.of(context)
+                                  .popAndPushNamed('bilPage', arguments: Data2);
                             });
                           },
-                          child: Container(
-                            height: MediaQuery.of(context).size.height / 14,
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            alignment: Alignment.center,
-                            child: const Text(
-                              'CHACKOUT',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green,
+                          ),
+                          child: const Text(
+                            'CHACKOUT',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -359,6 +355,12 @@ class _CartpageState extends State<Cartpage> {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("bilpage");
+        },
+        child: Icon(Icons.picture_as_pdf_rounded),
       ),
     );
   }
